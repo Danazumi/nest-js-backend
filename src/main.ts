@@ -4,6 +4,7 @@ import { AppModule } from './app.module';
 //The basic code needed just to start your app.
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const port =  process.env.PORT || 3000
   
 
   //Add CORS config
@@ -12,6 +13,7 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true, 
   })
-  await app.listen(process.env.PORT ?? 3000);
+  // await app.listen(process.env.PORT ?? 3000);
+  await app.listen(port)
 }
 bootstrap();
