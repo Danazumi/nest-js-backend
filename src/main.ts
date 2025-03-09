@@ -9,7 +9,9 @@ async function bootstrap() {
 
   //Add CORS config
   app.enableCors({
-    origin: 'http://localhost:9000', // Your Quasar app's URL
+    origin: ['http://localhost:9000',
+             'https://quasar-frontend.onrender.com'
+    ], // Your Quasar app's URL
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true, 
   })
